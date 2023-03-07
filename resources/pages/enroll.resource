@@ -20,10 +20,13 @@ Select plan
     Click    xpath=//label[text()="PLANO"]/..//div[contains(text(),"Selecione")]
     Click    css=div[class*="option"] >> text=${student_plan}
 
-select start date
+Select start date
     Focus    input[name="start_date"]
     ${start_date}    Get Start Date
 
     FOR    ${number}    IN    @{start_date}
         Keyboard Key    press    ${number}
     END
+
+Save enroll form
+    Click    button >> text=Salvar
