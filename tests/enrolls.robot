@@ -7,7 +7,7 @@ Resource            ../resources/database.resource
 
 
 *** Test Cases ***
-Shoul be possible to enroll new members
+Shoul be possible to enroll new member
     ${admin}    Get Fixture    admin
 
     ${student}    Get Fixture    student

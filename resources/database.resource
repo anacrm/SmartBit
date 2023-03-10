@@ -23,7 +23,7 @@ Select student Where email
 
     RETURN    ${result}[0]
 
-Delete enroll By email
+Delete Enroll By email
     [Arguments]    ${email}
 
     ${user}    Select student Where email    ${email}
