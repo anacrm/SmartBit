@@ -12,7 +12,7 @@ Go to form
 
 Select student
     [Arguments]    ${student_name}
-    Fill Text    xpath=//div[contains(text(),"Digite o nome do aluno")]/..//input    Falcão (Nao mexer)
+    Fill Text    xpath=//div[contains(text(),"Digite o nome do aluno")]/..//input    ${student_name}
     Click    css=div[class*="option"] >> text=${student_name}
 
 Select plan

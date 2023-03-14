@@ -7,6 +7,8 @@ Resource            pages/login.resource
 Resource            pages/enroll.resource
 Resource            database.resource
 Library             JSONLibrary
+Resource            services/sessions.resource
+Resource            services/students.resource
 
 
 *** Keywords ***
