@@ -3,13 +3,29 @@ Documentation       Suite Login
 
 Resource            ../resources/base.resource
 
+Test Setup          Start App
+Task Teardown       Finish App
+
+
+*** Variables ***
+${error_401}    Acesso não autorizado! Entre em contato com a equipe de atendimento.
+
 
 *** Test Cases ***
 Should login
     ${falcao}    Get Fixture    falcao
-    Start App
-    Input Text    xpath=//android.widget.EditText[@text="Informe o endereço ip da api"]    ${API_URL}
-    Input Text    xpath=//android.widget.EditText[@text="Informe seu código de acesso"]    ${falcao}[student][id]
-    Click Text    Entrar    exact_match=true
+
+    Login With Student Id    ${falcao}[student][id]
     Wait Until Page Contains    Olá, ${falcao}[student][name]!
-    Finish App
+
+Invalid student id
+    Login With Student Id    9999
+    Wait Until Page Contains    ${error_401}
+
+Negative student id
+    Login With Student Id    -1
+    Wait Until Page Contains    ${error_401}
+
+Alphanumeric student id
+    Login With Student Id    hd43345
+    Wait Until Page Contains    ${error_401}

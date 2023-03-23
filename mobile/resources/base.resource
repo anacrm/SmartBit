@@ -3,10 +3,7 @@ Documentation       Main file
 
 Library             AppiumLibrary
 Library             JSONLibrary
-
-
-*** Variables ***
-${API_URL}      http://192.168.117.152:3333
+Resource            screens/login.resource
 
 
 *** Keywords ***
@@ -33,3 +30,5 @@ Get Fixture
     ${fixture}    Load Json From File    ${EXECDIR}/resources/fixtures/${fixture_file}.json    encoding=UTF-8
 
     RETURN    ${fixture}
+
+#robot -d ./logs tests/login.robot
