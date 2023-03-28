@@ -4,6 +4,9 @@ Documentation       Main file
 Library             AppiumLibrary
 Library             JSONLibrary
 Resource            screens/login.resource
+Resource            services/sessions.resource
+Resource            services/students.resource
+Resource            database.resource
 
 
 *** Keywords ***
