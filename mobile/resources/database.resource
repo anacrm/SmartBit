@@ -2,6 +2,10 @@
 Documentation       Managing the test data through database
 
 Library             DatabaseLibrary
+Library             JSONLibrary
+Resource            screens/login.resource
+Resource            services/sessions.resource
+Resource            services/students.resource
 
 
 *** Keywords ***

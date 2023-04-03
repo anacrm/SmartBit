@@ -2,6 +2,7 @@
 Documentation       Suite Help request
 
 Resource            ../resources/base.resource
+Resource            ../resources/services/enrolls.resource
 
 Test Setup          Start App
 Task Teardown       Finish App
@@ -15,4 +16,7 @@ Should be possible request help
     Reset Student    ${ana}[student][email]
 
     ${token}    Get Service Token    ${admin}
-    POST New Student    ${token}    ${ana}[student]
+
+    ${student_id}    POST New Student    ${token}    ${ana}[student]
+
+    POST New Enrolls    ${token}    ${student_id}
